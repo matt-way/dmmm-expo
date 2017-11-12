@@ -223,7 +223,7 @@ const downloadSongArt = (dispatch, song) => {
   )
 
   dispatch(downloadSongArtStarted(song, task))
-  task.downloadAsync()
+  return task.downloadAsync()
     .then(() => dispatch(downloadSongArtComplete()))
 }
   
@@ -243,7 +243,7 @@ const downloadSong = (dispatch, song) => {
   )
 
   dispatch(downloadSongStarted(song, task))
-  task.downloadAsync()
+  return task.downloadAsync()
     .then(() => dispatch(downloadSongComplete()))
 }
 
