@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FlatList, View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
-//import SongDownloader from 'app/components/SongDownloader'
+import SongDownloader from '../components/SongDownloader'
 import SongTile from '../components/SongTile'
 
 const styles = StyleSheet.create({

@@ -29,13 +29,13 @@ handlers[SONGLIST_LOADED] = (state, { list }) => ({
 
 // song list error
 const SONGLIST_ERROR = 'SONGLIST_ERROR'
-const listError = error => ({
+const listError = err => ({
   type: SONGLIST_ERROR,
-  error
+  err
 })
-handlers[SONGLIST_ERROR] = (state, { error }) => ({
+handlers[SONGLIST_ERROR] = (state, { err }) => ({
   ...state,
-  error
+  err
 })
 
 // adding a song
@@ -66,7 +66,7 @@ const initList = () => dispatch => {
   return AsyncStorage.getItem(STORAGE_KEY)
     .then(JSON.parse)
     .then(list => dispatch(listLoaded(list || [])))
-    .catch(error => dispatch(listError({ error })))
+    .catch(err => dispatch(listError({ err })))
 }
 
 // add song to list thunk action
